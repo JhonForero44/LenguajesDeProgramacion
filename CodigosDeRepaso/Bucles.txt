@@ -1,0 +1,57 @@
+While:
+Un ciclo es ejucutar un recorrido en diferentes estructuras.
+A todo lista, diccionarios, variables,rango.
+
+Ejemplo con variable 1
+x=0
+x=x+1
+print(x)
+
+El ciclo while: 	While:Mientras
+"Mientras que la condicion X sea cierta haga Y"
+"Puede ser un "IF" que se ejecuta varias veces."
+
+Ejemplo While: 
+n=5
+while=n>0:
+	print(n)
+#	"Si se ejecuta hasta aqui el numero cinco se va a imprimir infinitas veces."
+	n=n-1 #Se incrementa la pantalla
+print("Despegue!")
+
+#else:
+print("Final While")#"Si se necesita el else se pueda Usar tambien."
+
+For:
+Donde comienza y donde termna, revisar todo con las posiciones.
+Recorer de forma interactiva cada uno de los elementos.
+
+Nuevo archivo: ciclofor.py
+
+Ejemplo:
+	"Cadena llamada Hola"
+#"Para cada letra dentro de la cadena "Hola":
+for letra in "Hola":
+#"Imprima cada uno de las letras"
+	print(letra)
+H
+O
+L
+A
+
+RANGE
+Arranque desde donde y hasta donde.
+	Inicio y Fin
+
+Ejemplo1:
+"El valor 3 no se toma en cuenta solo va a ser el de atras es decir (2)".
+for x in range(0, 3):
+	print(x)
+"Revise todos los numeros hasta el 3(2)"
+for x in range(3):
+	print(x)
+
+"Revise todos los numeros desde el 1 hasta el 3(1,2)"
+for x in range(3):
+	print(x)
+
