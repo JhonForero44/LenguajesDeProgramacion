@@ -1,7 +1,7 @@
 #Ejercicio: Usar el patron singlenton para simular el manejo de sesion de usuario de una plataforma de SW
 # con la funcionalidad de autenticacion (simulado) con usuario y contraseña y (logout).
 
-class sesion_singlento():
+class SesionSinglento():
     
     #Atributo de clases que almacena la instancia unica
     _instance = None
@@ -32,12 +32,12 @@ class sesion_singlento():
         return f"Usuario {usuario} ha cerrado sesion correctamente"
 
 #Creamos dos objetos
-sesion1 = sesion_singlento.create_instance()
-sesion2 = sesion_singlento.create_instance()
-print("---"*20)
+sesion1 = SesionSinglento.create_instance()
+sesion2 = SesionSinglento.create_instance()
+print("")
 #Comparamos si son el mismo objeto
 print(f"Son el mismo objeto?: {sesion1 is sesion2}")
-print("---"*20)
+print("")
 
 #Iniciamos sesion con el primer objeto
 print(sesion1.login("Jhon", "password123"))
@@ -47,4 +47,3 @@ print(sesion2.login("Arley", "password123"))
 print(sesion1.logout())
 #Intentamos cerrar sesion con el segundo objeto
 print(sesion2.logout())
-print("---"*20)
