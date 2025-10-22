@@ -21,7 +21,7 @@ class ControladorHogar:
         else:
             print("\n📋 Lista de agentes:")
             for a in self.agentes:
-                print(f"- {a.nombre} ({a.__class__.__name__}) - batería: {a.bateria}%")
+                print(f"- {a.nombre()} ({a.__class__.__name__}) - batería: {a.bateria()}%")
 
     def operar_agentes(self):
         if not self.agentes:

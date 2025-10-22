@@ -3,11 +3,9 @@ class Agente:
         self._nombre = nombre
         self._bateria = bateria
         
-    @property
     def nombre(self):
         return self._nombre
 
-    @property
     def bateria(self):
         return self._bateria
 
