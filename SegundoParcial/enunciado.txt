@@ -1,0 +1,40 @@
+ENUNCIADO:
+
+Usando principios SOLID, los patrones de diseño vistos en clase (u otros que 
+considere conveniente usar) y el patrón arquitectónico MVC, implemente un 
+programa en Python, en varios módulos, que implemente el sistema de control 
+maestro para la automatización de una vivienda, con los siguientes 
+subsistemas y funcionalidades y características:
+
+* sistema de control de acceso: controla el acceso de visitantes, 
+  registra cuántas personas se encuentran adentro, cuántas están 
+  esperando ingresar (si las hay), unas credenciales básicas 
+  (usuario y contraseña, para efecto de la simulación, en la realidad 
+  sería biométrico), registro de intentos fallidos de ingreso y 
+  sistema de alarma.
+
+* Sistema de control de luces: controla las luces en las distintas 
+  habitaciones de la vivienda, tiene registro de número de habitaciones, 
+  número de luces por habitación, debe controlarse el encendido y 
+  apagado, y la revisión de luminarias funcionales o con fallo.
+
+* Sistema de control de temperatura: similar al subsistema anterior, 
+  tiene registro del número de habitaciones, temperatura actual, 
+  temperatura mínima permitida, temperatura máxima permitida, 
+  estado del termostato (control de temperatura), y opciones de subir 
+  o bajar temperatura.
+
+* Sistema de control de residuos: tiene registro de la cantidad de 
+  residuos en la vivienda sin ser evacuados, cantidad de residuos 
+  reciclables, cantidad de residuos no reciclables, y alarma por 
+  exceso de residuos sin evacuar.
+
+REQUERIMIENTOS:
+
+  El control maestro debe ofrecer una interfaz que permita consultar o 
+  acceder a las funcionalidades de todos los subsistemas y controlarlos, 
+  y de igual forma, verificar su estado, principalmente de la batería: 
+  cada subsistema tiene un arreglo de 3 baterías, 1 de las cuales, 
+  como mínimo, debe estar al 100%. El control maestro debe emitir 
+  alarmas si uno de los subsistemas no cumple con esto o alguna de 
+  las funcionalidades evidencia alguna anomalía en la vivienda.
