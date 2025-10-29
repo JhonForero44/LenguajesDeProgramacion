@@ -4,11 +4,11 @@ def menu_residuos(control):
     sistema = control.obtener_subsistema("residuos")
 
     while True:
-        print("\n=== GESTIÓN DE RESIDUOS ===")
-        print("1. Agregar residuo")
-        print("2. Evacuar residuos")
-        print("3. Mostrar estado de residuos")
-        print("0. Volver")
+        print("\n--- GESTIÓN DE RESIDUOS ---")
+        print("1 -> Agregar residuo")
+        print("2 -> Evacuar residuos")
+        print("3 -> Mostrar estado de residuos")
+        print("4 -> Volver")
 
         opcion = input("Seleccione una opción: ")
 
@@ -20,7 +20,7 @@ def menu_residuos(control):
             sistema.ejecutar("evacuar")
         elif opcion == "3":
             sistema.sistema.mostrar_estado()
-        elif opcion == "0":
+        elif opcion == "4":
             break
         else:
             print("Opcion ingresada incorrecta!!!")

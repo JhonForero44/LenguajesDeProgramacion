@@ -4,11 +4,11 @@ def menu_luces(control):
     sistema = control.obtener_subsistema("luces")
 
     while True:
-        print("\n=== CONTROL DE LUCES ===")
-        print("1. Encender luz")
-        print("2. Apagar luz")
-        print("3. Mostrar estado de luces")
-        print("0. Volver")
+        print("\n--- CONTROL DE LUCES ---")
+        print("1 -> Encender luz")
+        print("2 -> Apagar luz")
+        print("3 -> Mostrar estado de luces")
+        print("4 -> Volver")
 
         opcion = input("Seleccione una opción: ")
 
@@ -22,7 +22,7 @@ def menu_luces(control):
             sistema.ejecutar_accion(sistema.apagar, int(hab), int(luz))
         elif opcion == "3":
             sistema.mostrar_estado()
-        elif opcion == "0":
+        elif opcion == "4":
             break
         else:
             print("Opcion ingresada incorrecta!!!")

@@ -19,7 +19,6 @@ class ControlMaestro:
                 "residuos": AdaptadorResiduos(FabricaSubsistemas.crear_subsistema("residuos")),
             }
 
-            # Aplicamos el decorador de batería a todos los subsistemas menos residuos
             for clave, subsistema in self.subsistemas.items():
                 if clave != "residuos":
                     self.subsistemas[clave] = VerificacionBateria(subsistema)
