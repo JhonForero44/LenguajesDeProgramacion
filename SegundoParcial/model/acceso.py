@@ -29,7 +29,7 @@ class SistemaAcceso(SubsistemaBase):
                 self.alarma.activar("Demasiados intentos fallidos de ingreso")
 
     def mostrar_estado(self):
-        print("\n Estado del sistema de acceso:")
+        print("Estado del sistema de acceso:")
         print(f"Usuarios registrados: {list(self.usuarios.keys())}")
         print(f"Personas dentro: {self.personas_adentro}")
         print(f"Intentos fallidos: {self.intentos_fallidos}")

@@ -14,10 +14,10 @@ def menu_temperatura(control):
 
         if opcion == "1":
             hab = int(input("Habitación: ")) - 1
-            sistema.ejecutar_accion(sistema.subir_temperatura, hab)
+            sistema.subir_temperatura(hab) 
         elif opcion == "2":
             hab = int(input("Habitación: ")) - 1
-            sistema.ejecutar_accion(sistema.bajar_temperatura, hab)
+            sistema.bajar_temperatura(hab)
         elif opcion == "3":
             sistema.mostrar_estado()
         elif opcion == "4":

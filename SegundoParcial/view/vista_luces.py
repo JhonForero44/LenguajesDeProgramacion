@@ -15,11 +15,11 @@ def menu_luces(control):
         if opcion == "1":
             hab = input("Habitación: ")
             luz = input("Nombre de la luz: ")
-            sistema.ejecutar_accion(sistema.encender, int(hab), int(luz))
+            sistema.encender (int(hab), int(luz))
         elif opcion == "2":
             hab = input("Habitación: ")
             luz = input("Nombre de la luz: ")
-            sistema.ejecutar_accion(sistema.apagar, int(hab), int(luz))
+            sistema.apagar (int(hab), int(luz))
         elif opcion == "3":
             sistema.mostrar_estado()
         elif opcion == "4":

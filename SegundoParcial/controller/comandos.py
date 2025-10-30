@@ -2,7 +2,6 @@ class Comando:
     def ejecutar(self):
         pass
 
-
 class ComandoEncenderLuz(Comando):
     def __init__(self, sistema, habitacion, luz):
         self.sistema = sistema
@@ -11,7 +10,6 @@ class ComandoEncenderLuz(Comando):
 
     def ejecutar(self):
         self.sistema.encender(self.habitacion, self.luz)
-
 
 class ComandoApagarLuz(Comando):
     def __init__(self, sistema, habitacion, luz):
@@ -22,7 +20,6 @@ class ComandoApagarLuz(Comando):
     def ejecutar(self):
         self.sistema.apagar(self.habitacion, self.luz)
 
-
 class ComandoSubirTemperatura(Comando):
     def __init__(self, sistema, habitacion):
         self.sistema = sistema
@@ -30,7 +27,6 @@ class ComandoSubirTemperatura(Comando):
 
     def ejecutar(self):
         self.sistema.subir_temperatura(self.habitacion)
-
 
 class ComandoEvacuarResiduos(Comando):
     def __init__(self, sistema):

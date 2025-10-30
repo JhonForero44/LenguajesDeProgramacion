@@ -9,3 +9,6 @@ class AdaptadorResiduos:
             self.sistema.evacuar()
         else:
             print("Acción desconocida para residuos.")
+
+    def mostrar_estado(self):
+        self.sistema.mostrar_estado()

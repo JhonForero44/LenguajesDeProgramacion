@@ -9,9 +9,10 @@ class SistemaResiduos(SubsistemaBase):
         self.limite_maximo = limite_maximo
 
     def agregar_residuo(self, tipo: str, cantidad: int):
-        if tipo.lower() == "reciclable":
+        tipo_normalizado = tipo.lower().replace(" ", "_")
+        if tipo_normalizado == "reciclable":
             self.reciclables += cantidad
-        elif tipo.lower() == "no_reciclable":
+        elif tipo_normalizado == "no_reciclable":
             self.no_reciclables += cantidad
         else:
             print("Tipo de residuo desconocido.")
