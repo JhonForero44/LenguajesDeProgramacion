@@ -1,4 +1,4 @@
-package PrimeraTarea;
+package PrimeraActividad;
 
 import java.util.Scanner;
 
@@ -9,16 +9,22 @@ public class GameManagerInstrinsicLocks {
     // candado intrínseco elegido por nosotros
     private final Object lock = new Object();
 
-    void consumirMonedas(int cantidadMonedas) {
+    // Sección crítica protegida con synchronized(lock)
+    void consumirMonedas(int cantidad) {
+
         synchronized (lock) {
-            if (coins >= cantidadMonedas) {
-                coins -= cantidadMonedas;
-                System.out.println("Hilo " + Thread.currentThread().getName()
-                        + " consumió: " + cantidadMonedas
-                        + " | Restantes: " + coins);
+
+            if (coins >= cantidad) {
+                coins -= cantidad;
+
+                System.out.println(
+                    Thread.currentThread().getName() + " consumió: " + cantidad + " | Restantes: " + coins
+                );
+
             } else {
-                System.out.println("No hay suficientes monedas para consumir "
-                        + cantidadMonedas);
+                System.out.println(
+                    Thread.currentThread().getName() + " intentó consumir " + cantidad + " pero NO hay suficientes monedas."
+                );
             }
         }
     }
@@ -59,7 +65,7 @@ public class GameManagerInstrinsicLocks {
             try {
                 threads[i].join();
             } catch (Exception e) {
-                // TODO: handle exception
+                e.printStackTrace();
             }
         }
 

@@ -17,7 +17,7 @@ Conceptos clave, en corto:
 - Cuidado: sincronizar demasiado (granulados grandes) reduce concurrencia; sincronizar 
   mal puede causar deadlock (bloqueo mutuo).
 */
-package Explicacion;
+package ExplicacionJavaOracle;
 
 public class IntrinsicLocksSynchronization {
 
@@ -45,11 +45,13 @@ public class IntrinsicLocksSynchronization {
         EjemploBloque bloque = new EjemploBloque();
 
         Thread t3 = new Thread(() -> {
-            for (int i = 0; i < 5000; i++) bloque.incrementar();
+            for (int i = 0; i < 5000; i++)
+                bloque.incrementar();
         });
 
         Thread t4 = new Thread(() -> {
-            for (int i = 0; i < 5000; i++) bloque.incrementar();
+            for (int i = 0; i < 5000; i++)
+                bloque.incrementar();
         });
 
         t3.start();
@@ -60,4 +62,3 @@ public class IntrinsicLocksSynchronization {
         System.out.println("Ejemplo 2 - Valor del dato (bloque synchronized): " + bloque.getDato());
     }
 }
-

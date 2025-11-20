@@ -1,10 +1,10 @@
-package PrimeraTarea;
+package PrimeraActividad;
 import java.util.Scanner;
 //Libreria importar para usar Variaables Atomicas
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class GameManagerVariableAtomica {
-    //Variable entera compartida para todos los hilos
+    // Variable compartida entre todos los hilos (segura sin sincronización)
     static AtomicInteger coins = new AtomicInteger(10000);
 
     public static void main(String[] args) {
@@ -14,22 +14,23 @@ public class GameManagerVariableAtomica {
         System.out.printf("Ingresa el numero de jugadores: ");
         int numeroJugadores = scanner.nextInt();
 
-        //Iniciar los hilo para cada jugador 
+        //Iniciar areglo de los hilo  
         Thread[] threads = new Thread[numeroJugadores];
 
-        //Cada hilo consume una cantidad de monedas 
+        // Crear hilos
         for (int i = 0; i < numeroJugadores; i++) {
 
+            // Cada jugador consumirá entre 1 y 100 monedas
             int coinsConsumidas = (int) (Math.random() * 100) + 1;
 
             threads[i] = new Thread(() -> {
-                // Consumir monedas de forma atómica
+
+                // Operación atómica para restar
                 coins.getAndAdd(-coinsConsumidas);
+
+                // Imprimir info del hilo
                 System.out.println(
-                    Thread.currentThread().getName() +
-                    " consumió " + coinsConsumidas +
-                    " | Restantes: " + coins.get()
-                );
+                    Thread.currentThread().getName() + " consumió " + coinsConsumidas + " | Restantes: " + coins.get());
             }, "Jugador-" + (i + 1));
         }
 
@@ -43,7 +44,7 @@ public class GameManagerVariableAtomica {
             try {
                 threads[i].join();
             } catch (Exception e) {
-                // TODO: handle exception
+                e.printStackTrace();
             }
         }
 

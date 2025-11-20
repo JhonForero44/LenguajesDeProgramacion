@@ -1,0 +1,52 @@
+1) Hilo normal (Thread)
+Un hilo normal es simplemente una unidad de ejecución independiente.
+✔ Puede correr en paralelo con otros hilos
+✔ No tiene sincronización incorporada
+✔ Si varios hilos acceden a la misma variable
+
+Ejemplo))
+Thread t = new Thread(() -> {
+    System.out.println("Hola soy un hilo normal");
+});
+t.start();
+
+2) Intrinsic Lock (candado intrínseco)
+Todo objeto en Java tiene un monitor lock interno.
+Sirve para:
+Asegurar que un bloque de código solo lo ejecute 1 hilo a la vez
+Evitar condiciones de carrera
+Garantizar orden y visibilidad de memoria
+Se usa con la palabra synchronized
+
+Ejmplo))
+synchronized (objeto) {
+    // Solo un hilo entra aquí
+}
+
+3)Método sincronizado (synchronized)
+Es simplemente una forma fácil de usar el intrinsic lock.
+Cuando pones synchronized en un método:
+Java usa el intrinsic lock del objeto para proteger ese método
+Solo un hilo puede ejecutar ese método a la vez
+
+Ejemplo))
+public synchronized void incrementar() {
+    contador++;
+}
+➡️ Es igual que hacer:
+public void incrementar() {
+    synchronized(this) {
+        contador++;
+    }
+}
+
+4)Variable Atómica
+Son clases especiales de Java cuyo objetivo es:
+✔ Realizar operaciones atómicas SIN usar synchronized
+✔ Muy rápidas
+✔ Evitan race conditions con operaciones simples
+
+Ejemplo:
+AtomicInteger contador = new AtomicInteger(0);
+contador.incrementAndGet();  // atómico
+

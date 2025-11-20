@@ -1,6 +1,6 @@
-package Explicacion;
+package ConceptosHilos;
 
-public class VariosHilos {
+public class CreacionVariosHilos {
     
     public static void main(String[] args) {
         for(int i = 1; i <= 5; i++){
